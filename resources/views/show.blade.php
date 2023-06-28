@@ -1,0 +1,19 @@
+@extends('layout')
+@section('title','Usuarios')
+@section('content')
+    <h1>USUARIOS</h1>
+    <table>
+        <tr>
+            <td>ID USUARIO</td>
+            <td>USUARIO</td>
+            <td>CONTRASEÑA</td>
+            <td>ROL</td>
+        </tr>
+        <tr>
+            <td>{{$usuariotabla->idUsuario}}</td>
+            <td>{{$usuariotabla->Usuario}}</td>
+            <td>{{$usuariotabla->Contraseña}}</td>
+            <td>{{$usuariotabla->Rol}}</td>
+        </tr>
+    </table>
+@endsection
