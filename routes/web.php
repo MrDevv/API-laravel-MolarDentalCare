@@ -18,3 +18,4 @@ Route::get('pacientejson','App\Http\Controllers\PacientesController@index')->nam
 Route::get('odontologojson','App\Http\Controllers\OdontologoController@index')->name('odontologo');
 Route::get('horariojson','App\Http\Controllers\HorarioAtencionController@index')->name('horario');
 Route::get('citajson','App\Http\Controllers\CitaController@index')->name('cita');
+Route::post('/paciente',[PacientesController::class,'store']);

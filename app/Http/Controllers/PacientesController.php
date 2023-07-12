@@ -28,7 +28,29 @@ class PacientesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'Apellidos'=>'required',
+            'Nombres'=>'required',
+            'FechaNacimiento'=>'required',
+            'Dni'=>'required',
+            'Telefono'=>'required',
+            'Direccion'=>'required',
+            'Correo'=>'required',
+            'idUsuario'=>'required'
+
+        ]);
+        $paciente=new Paciente();
+        $paciente->Apellidos=$request->input('Apellidos');
+        $paciente->Nombres=$request->input('Nombres');
+        $paciente->FechaNacimiento=$request->input('FechaNacimiento');
+        $paciente->Dni=$request->input('Dni');
+        $paciente->Telefono=$request->input('Telefono');
+        $paciente->Direccion=$request->input('Direccion');
+        $paciente->Correo=$request->input('Correo');
+        $paciente->idUsuario=$request->input('idUsuario');
+        $paciente->save();
+
+        return response()->json(['message'=>'Datos almacenados correctamente'],200);
     }
 
     /**
